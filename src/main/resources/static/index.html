@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>gerencie suas financas</title>
+    <link rel="stylesheet" href="style.css">
+    <th>Ações</th>
+
+
+
+</head>
+<body>
+<h1>Minhas despesas</h1>
+<table border="1">
+    <thead>
+    <div class="form-container">
+        <h2>Adicionar Nova Despesa</h2>
+        <input type="text" id="descricao" placeholder="Descrição (ex: Creatina)">
+        <input type="number" id="valor" placeholder="Valor (R$)">
+        <input type="text" id="categoria" placeholder="Categoria">
+        <button onclick="salvarDespesa()">Salvar</button>
+    </div>
+    <tr>
+        <th>Descrição</th>
+        <th>Valor</th>
+        <th>Categoria</th>
+    </tr>
+    </thead>
+    <tbody id="tabela-corpo">
+    </tbody>
+</table>
+
+<script src="script.js"></script>
+
+</body>
+</html>
