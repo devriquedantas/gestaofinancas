@@ -6,5 +6,4 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface DespesasRepository extends JpaRepository<Despesas, Long> {
-    // Pronto! Você já tem métodos como save() e findAll() sem escrever nada.
 }

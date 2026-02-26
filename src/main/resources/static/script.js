@@ -17,22 +17,28 @@ async function carregarDespesas() {
 
 function renderizarTabela(despesas) {
     const corpoTabela = document.getElementById('tabela-corpo');
+    const totalElemento = document.getElementById('valor-total');
     corpoTabela.innerHTML = '';
 
-    despesas.forEach(d => {
-        const linha = document.createElement('tr');
+    let somatorio = 0;
 
+    despesas.forEach(d => {
+        somatorio += d.valor;
+
+        const linha = document.createElement('tr');
         linha.innerHTML = `
             <td>${d.descricao}</td>
             <td>R$ ${d.valor.toFixed(2)}</td>
             <td><span class="badge">${d.categoria}</span></td>
-            <td>${new Date(d.data).toLocaleDateString('pt-BR')}</td>
-            <td>
+            <td>${new Date(d.data).toLocaleDateString('pt-BR')}</td> <td>
                 <button onclick="excluirDespesa(${d.id})" class="btn-delete">🗑️</button>
             </td>
         `;
         corpoTabela.appendChild(linha);
     });
+
+
+    totalElemento.innerText = `R$ ${somatorio.toFixed(2)}`;
 }
 
 
