@@ -14,7 +14,7 @@ git clone https://github.com/seu-usuario/gestaofinancas.git
 
 2. **Entre na pasta**:
 
-\`\`\`bash
+```bash
 
 cd gestaofinancas
 
