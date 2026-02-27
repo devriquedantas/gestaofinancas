@@ -6,7 +6,7 @@
 
 ```bash
 
-git clone https://github.com/seu-usuario/gestaofinancas.git
+git clone https://github.com/devriquedantas/gestaofinancas.git
 
 ```
 
