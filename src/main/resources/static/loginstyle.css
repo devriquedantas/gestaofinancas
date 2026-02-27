@@ -1,51 +1,104 @@
-/* Fundo radial que você escolheu */
+:root {
+    --bg-white: #ffffff;
+    --text-black: #000000;
+    --text-gray: #757575;
+    --line-color: #e0e0e0;
+}
+
 body {
     margin: 0;
-    height: 100vh;
+    padding: 0;
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg-white); /* FUNDO BRANCO PURO */
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #111927;
-    background-image:
-        radial-gradient(at 47% 33%, hsl(162, 77%, 40%) 0, transparent 59%),
-        radial-gradient(at 82% 65%, hsl(218, 39%, 11%) 0, transparent 55%);
-    font-family: 'Inter', sans-serif;
+    height: 100vh;
 }
 
+.login-wrapper {
+    width: 100%;
+    max-width: 400px;
+    padding: 20px;
+}
 
-.card {
-    backdrop-filter: blur(16px) saturate(180%);
-    -webkit-backdrop-filter: blur(16px) saturate(180%);
-    background-color: rgba(17, 25, 40, 0.75);
-    border-radius: 12px;
-    border: 1px solid rgba(255, 255, 255, 0.125);
-    padding: 40px;
-    width: 350px;
-    color: white;
+.brand {
     text-align: center;
-    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    letter-spacing: 4px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    margin-bottom: 50px;
+    color: var(--text-black);
 }
 
-
-.input-group { text-align: left; margin-bottom: 20px; }
-label { display: block; margin-bottom: 8px; color: #ccc; }
-input {
-    width: 100%;
-    padding: 12px;
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 8px;
-    color: white;
-    box-sizing: border-box;
+h1 {
+    font-size: 2rem;
+    margin: 0 0 10px 0;
+    font-weight: 700;
 }
 
-.btn-sign {
+.subtitle {
+    color: var(--text-gray);
+    margin-bottom: 40px;
+    font-size: 1rem;
+}
+
+.input-group {
+    margin-bottom: 30px;
+}
+
+.input-group label {
+    display: block;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--text-gray);
+    margin-bottom: 5px;
+    letter-spacing: 1px;
+}
+
+.input-group input {
     width: 100%;
-    padding: 12px;
-    background-color: #00e676;
     border: none;
+    border-bottom: 1px solid var(--line-color); /* APENAS A LINHA */
+    padding: 10px 0;
+    font-size: 1rem;
+    outline: none;
+    background: transparent;
+}
+
+.input-group input:focus {
+    border-bottom: 1px solid var(--text-black);
+}
+
+.form-options {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.85rem;
+    margin-bottom: 40px;
+    color: var(--text-gray);
+}
+
+.btn-entrar {
+    width: 100%;
+    background-color: #0f1715;
+    color: white;
+    border: none;
+    padding: 16px;
     border-radius: 8px;
-    color: #111;
-    font-weight: bold;
+    font-size: 1rem;
+    font-weight: 600;
     cursor: pointer;
+}
+
+footer {
+    text-align: center;
+    margin-top: 30px;
+    font-size: 0.85rem;
+    color: var(--text-gray);
+}
+
+footer a {
+    color: var(--text-black);
+    text-decoration: underline;
+    font-weight: 600;
 }
