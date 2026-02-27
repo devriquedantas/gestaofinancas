@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Login - SmartExpense</title>
+    <link rel="stylesheet" th:href="@{/loginstyle.css}">
+</head>
+<body>
+<div class="background-radial">
+    <div class="card">
+        <h2>Bem-Vindo</h2>
+        <p>Acesse com seu usuário e senha</p>
+
+
+        <p th:if="${param.error}" style="color: #ff5252; margin-top: 10px;">
+            Usuário ou senha incorretos.
+        </p>
+
+        <form th:action="@{/login}" method="POST">
+            <div class="input-group">
+                <label>Usuario</label>
+                <input type="text" name="username" placeholder="Seu usuário" required>
+            </div>
+
+            <div class="input-group">
+                <label>Senha</label>
+                <input type="password" name="password" placeholder="••••••••" required>
+            </div>
+
+            <button type="submit" class="btn-sign">Entrar</button>
+
+            <p class="footer-text" style="margin-top: 20px; font-size: 0.9rem; color: #ccc;">
+                Não tem uma conta? <a th:href="@{/cadastro}" style="color: #00e676; text-decoration: none; font-weight: bold;">Criar conta</a>
+            </p>
+        </form>
+
+        <h3>Feito por Henrique Dantas</h3>
+    </div>
+</div>
+</body>
+</html>

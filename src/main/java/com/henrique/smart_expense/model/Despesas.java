@@ -1,10 +1,7 @@
 package com.henrique.smart_expense.model;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import lombok.Data;
 
+import jakarta.persistence.*;
+import lombok.Data;
 import java.time.LocalDate;
 
 @Entity
@@ -20,4 +17,7 @@ public class Despesas {
     private String categoria;
 
 
+    @ManyToOne
+    @JoinColumn(name = "usuario_id", nullable = false)
+    private Usuario usuario;
 }

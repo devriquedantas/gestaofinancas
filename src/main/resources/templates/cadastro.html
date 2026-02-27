@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Cadastro - SmartExpense</title>
+    <link rel="stylesheet" th:href="@{/loginstyle.css}">
+</head>
+<body>
+<div class="background-radial">
+    <div class="card">
+        <h2>Crie sua Conta</h2>
+        <p>Preencha os dados abaixo</p>
+
+        <form th:action="@{/usuario/cadastrar}" method="POST">
+            <div class="input-group">
+                <label>Usuario</label>
+                <input type="text" name="username" placeholder="Escolha um usuário" required>
+            </div>
+
+            <div class="input-group">
+                <label>Senha</label>
+                <input type="password" name="password" placeholder="Crie uma senha" required>
+            </div>
+
+            <button type="submit" class="btn-sign">Cadastrar</button>
+            <p style="margin-top: 15px;"><a th:href="@{/login}" style="color: #ccc; text-decoration: none; font-size: 0.8rem;">Já tenho conta</a></p>
+        </form>
+    </div>
+</div>
+</body>
+</html>

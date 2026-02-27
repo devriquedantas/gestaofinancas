@@ -1,4 +1,5 @@
 package com.henrique.smart_expense;
+
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -14,18 +15,28 @@ public class SecurityConfig {
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
-                .csrf(csrf -> csrf.disable()) // Desabilita para facilitar os testes iniciais
+                .csrf(csrf -> csrf.disable())
                 .authorizeHttpRequests(auth -> auth
-                        .anyRequest().authenticated() // Bloqueia tudo
+
+                        .requestMatchers("/login", "/cadastro", "/usuario/cadastrar", "/loginstyle.css", "/style.css", "/script.js").permitAll()
+                        .anyRequest().authenticated()
                 )
-                .formLogin(form -> form.defaultSuccessUrl("/", true)) // Usa a tela padrão, mas manda pro seu index
-                .logout(logout -> logout.logoutSuccessUrl("/login"));
+                .formLogin(form -> form
+                        .loginPage("/login")
+                        .loginProcessingUrl("/login")
+                        .defaultSuccessUrl("/", true)
+                        .permitAll()
+                )
+                .logout(logout -> logout
+                        .logoutSuccessUrl("/login?logout")
+                        .permitAll()
+                );
 
         return http.build();
     }
 
     @Bean
     public PasswordEncoder passwordEncoder() {
-        return new BCryptPasswordEncoder(); // Criptografia de alto nível
+        return new BCryptPasswordEncoder();
     }
 }
